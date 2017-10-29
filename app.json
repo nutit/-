@@ -6,23 +6,19 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "一封亲笔信",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-   "color": "#a9b7b7",
-   "selectedColor": "#11cd6e",
+   "color": "#A4AAB3",
+   "selectedColor": "#F5A441",
    "borderStyle":"white",
    "list": [{
-     "selectedIconPath": "image/111.png",
-     "iconPath": "image/11.png",
      "pagePath": "pages/index/index",
-     "text": "首页"
+     "text": "信封"
    }, {
-     "selectedIconPath": "image/221.png",
-     "iconPath": "image/22.png",
      "pagePath": "pages/logs/logs",
-     "text": "日志"
+     "text": "发现"
    }]
  }
 }

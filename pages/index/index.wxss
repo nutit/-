@@ -16,16 +16,53 @@
   line-height: 30px;
   color: #777777;
 }
-.on{ color: #da7c0c;
+.on{
+  color: #da7c0c;
   border-bottom: 5rpx solid #da7c0c;
 }
-
 .swiper-box{
   display: block;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 .swiper-box view{
   text-align: center;
+}
+.swiper-item .mail-list{
+  margin-top: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.swiper-item .mail-list .mail{
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.swiper-item .mail-list .mail-content{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c0c2cc;
+  text-align: left;
+}
+.swiper-item .mail-list .mail-footer{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #F5A441;
+}
+.swiper-item .mail-list .mail-footer .user-img{
+  border-radius: 4px;
+}
+.swiper-item .mail-list .mail-footer .user-name{
+  font-size: 17px;
+  line-height: 24px;
+  margin-left: 10px;
 }

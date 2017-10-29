@@ -1,8 +1,6 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.container{
+  margin: 20px 10px 0 10px ;
 }
-.log-item {
-  margin: 10rpx;
+.container-img{
+  text-align: center;
 }

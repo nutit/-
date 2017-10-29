@@ -7,12 +7,49 @@
 </view>
 
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-    <!-- 我是哈哈 -->
-    <swiper-item>
-      <view>我是哈哈</view>
+    <!-- 我收到的 -->
+    <swiper-item class="swiper-item">
+      <scroll-view scroll-y class="mail-list" style="height:{{winHeight - 61}}px" >
+        <view class="mail">
+          <view class="mail-content">
+            用户划动引起swiper变化；其他原因将用空字符串表示。注意：其中只可放置组件，否则会导致未定义的行为
+          </view>
+          <view class="mail-footer">
+            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">德川亮</view>
+          </view>
+        </view>
+        <view class="mail">
+          <view class="mail-content">
+            用户划动引起swiper变化；其他原因将用空字符串表示。注意：其中只可放置组件，否则会导致未定义的行为
+          </view>
+          <view class="mail-footer">
+            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">德川亮</view>
+          </view>
+        </view>
+        <view class="mail">
+          <view class="mail-content">
+            用户划动引起swiper变化；其他原因将用空字符串表示。注意：其中只可放置组件，否则会导致未定义的行为
+          </view>
+          <view class="mail-footer">
+            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">德川亮</view>
+          </view>
+        </view>
+        <view class="mail">
+          <view class="mail-content">
+            用户划动引起swiper变化；其他原因将用空字符串表示。注意：其中只可放置组件，否则会导致未定义的行为
+          </view>
+          <view class="mail-footer">
+            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">德川亮</view>
+          </view>
+        </view>
+      </scroll-view>
     </swiper-item>
-    <!-- 我是呵呵 -->
-    <swiper-item>
-      <view>我是呵呵</view>
+    <!-- 我写的 -->
+    <swiper-item class="swiper-item">
+
     </swiper-item>
 </swiper>

@@ -1,6 +1,7 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+  <view class="container-img">
+    <image style="background-color: #fff;" mode="scaleToFill" src="//jdxl-img.b0.upaiyun.com/images/9eba07bb475347628c3176dad5f506d9.jpg_wo400"></image>
+  </view>
+  <button class="container-button" bindtap="setPlain" style="color: #fff; background-color: rgba(245,164,65,1);">交流你的建议与想法</button>
 </view>
