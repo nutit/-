@@ -1,0 +1,35 @@
+<view class="know-warpper">
+  <view class="header">
+    <view class="icon-warpper">
+      <icon type="info" size="30"/>
+    </view>
+    <view class="know-title">
+      了解如何写出一份亲笔信
+    </view>
+    <view class="sub-title">阅读一下内容后请勾选</view>
+  </view>
+  <view class="radio-list">
+    <radio-group class="radio-group">
+      <label>
+        <radio />
+        <view class="text">
+          我们希望收信人能收到一封独一无二的信，因此写信时将不能复制或粘贴
+        </view>
+
+      </label>
+      <label>
+        <radio />
+        <view class="text">
+          我们希望收信人能收到你的投入和真诚，因此写信时需要至少写200字，和20分钟
+        </view>
+      </label>
+      <label>
+        <radio />
+        <view class="text">
+          请相信，当你把一封亲笔信发送给收信人时，我们会让TA感受到你的投入和真诚
+        </view>
+      </label>
+    </radio-group>
+  </view>
+  <button class="know-button" bindtap="edit"  style="color: #fff; background-color: rgba(245,164,65,1);">开始写信</button>
+</view>

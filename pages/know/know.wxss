@@ -1,0 +1,46 @@
+.know-warpper{
+  padding: 20px;
+}
+.header{
+  text-align: center;
+}
+.icon-warpper{
+  margin-bottom: 10px;
+}
+.know-title{
+  font-size: 18px;
+  line-height: 25px;
+  color: #000;
+  font-weight: 600;
+}
+.sub-title{
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9b9b9b;
+}
+.radio-list{
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+.radio-list label{
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+}
+.radio-list radio{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 5px;
+  top: 2px;
+}
+.radio-list .text{
+  padding-left: 40px;
+  line-height: 25px;
+}
+.know-button{
+  margin-top: 100px;
+}

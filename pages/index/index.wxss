@@ -1,3 +1,6 @@
+page{
+  background: #f5f3f3;
+}
 /**index.wxss**/
 .swiper-tab{
   width: 100%;
@@ -29,7 +32,7 @@
   text-align: center;
 }
 .swiper-item .mail-list{
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 0 10px;
   box-sizing: border-box;
 }
@@ -65,4 +68,21 @@
   font-size: 17px;
   line-height: 24px;
   margin-left: 10px;
+}
+
+.pen-icon{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+}
+.pen-icon1{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+
 }

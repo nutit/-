@@ -1,0 +1,12 @@
+<view  class="drawer_box" >
+  <view class="section">
+    <input placeholder="收件人称呼"/>
+  </view>
+  <view class="content">
+    <textarea placeholder="在此输入正文" />
+  </view>
+  <view class="bottom-bts">
+    <button class="know-button" bindtap="edit"  style="color: #fff; background-color: rgba(245,164,65,1);">发送/预览</button>
+    <button class="know-button" bindtap="edit">存为草稿退出</button>
+  </view>
+</view>

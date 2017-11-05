@@ -1,6 +1,16 @@
+page{
+  background: #F5F3F3;
+}
 .container{
   margin: 20px 10px 0 10px ;
+  padding: 20px;
+  background: #fff;
 }
 .container-img{
+  overflow:hidden;
+  margin:0px auto;
   text-align: center;
+}
+.container-button{
+  margin-top: 20px;
 }
