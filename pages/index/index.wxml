@@ -2,6 +2,8 @@
 <view class="swiper-tab">
   <view class="swiper-content">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">收到的</view>
+    <view>
+  </view>
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我写的</view>
   </view>
 </view>
