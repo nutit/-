@@ -5,8 +5,11 @@
   <view class="content">
     <textarea placeholder="在此输入正文" />
   </view>
+  <view class="info">
+    <view class="font_count">0/20</view>
+    <input class="name" bindinput="{{input}}" placeholder="署名" maxlength="6" placeholder-class="phcolor" focus="{{focus}}" />
+  </view>
   <view class="bottom-bts">
-    <button class="know-button" bindtap="edit"  style="color: #fff; background-color: rgba(245,164,65,1);">发送/预览</button>
-    <button class="know-button" bindtap="edit">存为草稿退出</button>
+    <view class="navigator" bindtap="show">预览信</view>
   </view>
 </view>

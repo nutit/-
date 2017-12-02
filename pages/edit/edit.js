@@ -1,6 +1,10 @@
 Page({
   data: {
-
+    name: '',
+    input: '',
+    name: '',
+    font_count: 0,
+    date: null
   },
   onLoad: function(){
     wx.showModal({
@@ -19,5 +23,11 @@ Page({
   },
   onReady: function(){
 
-  }
+  },
+  input(ev){
+    console.log(ev);
+  },
+  show: function() {
+    console.log('show');
+  },
 })

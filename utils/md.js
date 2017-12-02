@@ -1,17 +1,42 @@
-const has_user = (open_id) => {
-  var Product = new wx.BaaS.TableObject(tableId)
-  var query = new wx.BaaS.Query()
+import {formatTime} from '/util.js'
 
-  query.compare('open_id', '=', open_id)
+const search_user = (userInfo) => {
+  let Product = new wx.BaaS.TableObject(3399)
+  let query = new wx.BaaS.Query()
+  let userData = {
+    "user_id":  Number(userInfo.id),
+    "nickName": userInfo.nickName,
+    "open_id": userInfo.openid,
+    "avatarUrl": userInfo.avatarUrl,
+    "created_by": formatTime(new Date)
+  }
 
-  return Product.setQuery(query).find().then( (res) => {
-  // success
+  query.compare('user_id', '=', Number(userInfo.id))
+
+  Product.setQuery(query).find().then( (res) => {
+    if (res.statusCode !== 200 || !res.data.objects.length) {
+      add_user(userData)
+    }
+    // success
   }, (err) => {
+
+  })
+}
+
+const add_user = (data) => {
+  let Product = new wx.BaaS.TableObject(3399)
+  let product = Product.create()
+
+  return product.set(data).save().then( (res) => {
+  // success
+    return res
+  }, (err) => {
+    return err
     // err
   })
-
 }
 
 module.exports = {
-  query: query
+  search_user: search_user,
+  add_user: add_user
 }
