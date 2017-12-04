@@ -1,15 +1,16 @@
 <view  class="drawer_box" >
   <view class="section">
-    <input placeholder="收件人称呼"/>
+    <input class="addressee" value="{{addressee}}" bindinput="addressee" maxlength="6" placeholder="收件人称呼"/>
   </view>
   <view class="content">
-    <textarea placeholder="在此输入正文" />
+    <textarea placeholder="在此输入正文" value="{{content}}"  bindinput="change" />
   </view>
   <view class="info">
-    <view class="font_count">0/20</view>
-    <input class="name" bindinput="{{input}}" placeholder="署名" maxlength="6" placeholder-class="phcolor" focus="{{focus}}" />
+    <view class="font_count">{{font_count}}/20</view>
+    <input class="name"  value="{{name}}" placeholder="署名" maxlength="6" bindinput="name" placeholder-class="phcolor"  />
   </view>
   <view class="bottom-bts">
-    <view class="navigator" bindtap="show">预览信</view>
+    <view class="navigator" style='color:#c0c2cc;' bindtap="save">存为草稿</view>
+    <view class="navigator" bindtap="preview">预览信</view>
   </view>
 </view>

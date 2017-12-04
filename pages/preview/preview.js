@@ -2,7 +2,7 @@ Page({
   data: {
     logs: []
   },
-  onLoad: function () {
-
+  onLoad: function (option) {
+    console.log(option);
   }
 })
