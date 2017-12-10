@@ -1,22 +1,18 @@
 <view class="drawer_box">
   <view class="drawer_content">
     <scroll-view scroll-y style="height: 200px;">
-      <view class="scroll-view-item">文本内
-        容内容内容呢绒短发那是肯定发送咖啡呢拉森理发卡深南东路烦恼是亮
-        点法拉盛贷款你发送览行预览行预览行预览行预览行预览行预览行预
-        览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行
-        预览行预览行预览行预览行预览行预览行预文本内容内容内容呢绒短发那是肯
-        定发送咖啡呢拉森理发卡深南东路烦恼是亮点法拉盛贷款你发送览行预览行预览
-        行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预览行预</view>
-      <view class="scroll-view-item" style="text-align: right; font-size: 13px;">陈嘉诚</view>
+      <view class="scroll-view-item" style="color: #40434c; font-size: 16px; padding-bottom: 30px;" wx:if="{{addressee}}">{{addressee}}</view>
+      <view class="scroll-view-item" style="padding-bottom: 30px;">{{content}}</view>
+      <view class="scroll-view-item" style="text-align: right; font-size: 13px;">{{sendname}}</view>
     </scroll-view>
     <view class="drawer-info">
-      <text class="fonts">300字</text>
-      <text class="time">20分钟50秒</text>
+      <text class="fonts">{{fonts}}字</text>
+      <text class="time">{{time}}ms</text>
     </view>
   </view>
   <view class="bottom-btns">
-    <button bindtap="sureSend" style="color: #fff; margin-bottom: 15px; background-color: rgba(245,164,65,1);">确认发送</button>
-    <button bindtap="back">返回修改</button>
+    <button wx:if="{{!send_id}}" bindtap="sureSend" open-type="share" style="color: #fff; margin-bottom: 15px; background-color: rgba(245,164,65,1);">确认发送</button>
+    <button wx:if="{{!send_id}}" bindtap="back">返回修改</button>
+    <button wx:if="{{send_id}}" bindtap="edit" style="color: #fff; margin-bottom: 15px; background-color: rgba(245,164,65,1);">写一封</button>
   </view>
 </view>

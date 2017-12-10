@@ -1,11 +1,13 @@
 import {formatTime} from '../../utils/util.js'
 import {letterId} from '../../utils/base.js'
 
+const app = getApp()
+
 Page({
   data: {
-    addressee:'收件人',
-    name: '发件人',
-    content: '文本内容内容内容呢绒短发那是肯定发送咖啡呢拉森理发卡深南东路烦恼是亮点法拉盛贷款你发送',
+    addressee:'',
+    sendname: '',
+    content: '',
     font_count: 0,
     date: formatTime(new Date),
     time: +new Date
@@ -14,15 +16,11 @@ Page({
     //判断是否为草稿
     if (option.uuid) {
       this.setData({
-        "uuid": option.uuid
+        "uuid": option.uuid,
+        "content": option.content,
+        "font_count": option.content.length
       })
     }
-    
-    wx.navigateTo({
-      url: '/pages/preview/preview?name='+this.data.name+'&content='+this.data.content+'&addressee='+this.data.addressee+'&date='+this.data.date
-    })
-
-    return
     wx.showModal({
       title: '你正在写一份亲笔信，因此  ',
       content: '你需要写200+的字 \r\n 你需要花费10:00+分钟 \r\n 另外 \r\n 此信不能复制和粘贴 \r\n 您只能发送给1个微信好友',
@@ -51,9 +49,9 @@ Page({
       addressee: ev.detail.value
     })
   },
-  name(ev){
+  sendname(ev){
     this.setData({
-      name: ev.detail.value
+      sendname: ev.detail.value
     })
   },
   save(){
@@ -64,7 +62,7 @@ Page({
     if (this.data.uuid) {
       var query = new wx.BaaS.Query()
       var Product = new wx.BaaS.TableObject(3701)
-      query.compare('uuid', '=', 1212)
+      query.compare('uuid', '=', this.data.uuid)
 
     } else {
       let uuid = letterId()
@@ -74,28 +72,35 @@ Page({
 
       let draft = {
         "uuid": uuid,
-        "user": Number(userInfo.openid),
+        "user": Number(app.userInfo.id),
         "content": this.data.content,
         "time": this.data.time
       }
-      return
+      console.log(draft.uuid);
       product.set(draft).save().then( (res) => {
         console.log(res,'ok');
+        wx.navigateTo({
+          url: '../../pages/index/index'
+        })
         // success
       }, (err) => {
         // err
         console.log(err, 'err');
       })
-
-
     }
-
-
-
   },
   preview: function() {
+    this.setData({
+      time: +new Date - this.data.time
+    })
+
+    if (!this.data.content.length) {
+        return
+    }
+
     wx.navigateTo({
-      url: '/pages/preview/preview?name='+this.data.name+'&content='+this.data.content+'&addressee='+this.data.addressee+'&date='+this.data.date
+      url: '/pages/preview/preview?sendname='+this.data.sendname+'&content='+this.data.content+'&addressee='+this.data.addressee+'&time='+this.data.time
+      // url: '/pages/preview/preview?sendname=333&content=22222&addressee=1111&time=6848&send_id=38944955&send_avatar=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoTy7GKvduQo9v93RZEzUZ68rdtXVsZK1OaichRKRoHGkc5Pg0N9mXD6w66ib4kELJzcUU0qAxr5jIw/0'
     })
   },
 })

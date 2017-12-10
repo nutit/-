@@ -11,40 +11,23 @@
     <!-- 我收到的 -->
     <swiper-item class="swiper-item">
       <scroll-view scroll-y class="mail-list" style="height:{{winHeight - 61}}px" >
-        <view class="mail">
+        <view class="mail" bindtap="show_preview" data-content="这是一封默认发送的信" data-time="1000" data-sendname="德川亮" data-username="{{username}}">
           <view class="mail-content">
-          也许没有逻辑和秩序。也许颠倒了记忆和未来。这些都不重要。只要我在写，你在读。之前我只遇见过一个人，可以说话说到连心的缝隙也没有了。他住在很远的地方。我们说过那么的一次话之后，就告别了。但我知道，这样的告别之后，一定还会再见。
+            这是一封默认发送的信
           </view>
           <view class="mail-footer">
             <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
             <view class="user-name">德川亮</view>
           </view>
         </view>
-        <view class="mail">
+
+        <view  wx:for="{{received_list}}" class="mail" bindtap="show_preview" data-content="{{item.content}}"  data-username="{{item.user_name}}" data-sendname="{{item.send_name}}">
           <view class="mail-content">
-            用也许没有逻辑和秩序。也许颠倒了记忆和未来。这些都不重要。只要我在写，你在读。之前我只遇见过一个人，可以说话说到连心的缝隙也没有了。他住在很远的地方。我们说过那么的一次话之后，就告别了。但我知道，这样的告别之后，一定还会再见。
+            {{item.content}}
           </view>
           <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
-          </view>
-        </view>
-        <view class="mail">
-          <view class="mail-content">
-            用也许没有逻辑和秩序。也许颠倒了记忆和未来。这些都不重要。只要我在写，你在读。之前我只遇见过一个人，可以说话说到连心的缝隙也没有了。他住在很远的地方。我们说过那么的一次话之后，就告别了。但我知道，这样的告别之后，一定还会再见。
-          </view>
-          <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
-          </view>
-        </view>
-        <view class="mail">
-          <view class="mail-content">
-            用也许没有逻辑和秩序。也许颠倒了记忆和未来。这些都不重要。只要我在写，你在读。之前我只遇见过一个人，可以说话说到连心的缝隙也没有了。他住在很远的地方。我们说过那么的一次话之后，就告别了。但我知道，这样的告别之后，一定还会再见。
-          </view>
-          <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
+            <image class="user-img" src="{{item.send_avatar}}" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">{{item.send_name}}</view>
           </view>
         </view>
       </scroll-view>
@@ -52,40 +35,22 @@
     <!-- 我写的 -->
     <swiper-item class="swiper-item">
       <scroll-view scroll-y class="mail-list" style="height:{{winHeight - 61}}px" >
-        <view class="mail">
+        <view  wx:for="{{send_list}}" class="mail" bindtap="show_preview" data-time="{{item.time}}" data-content="{{item.content}}" data-username="{{itme.receuved_name}}"  data-sendname="{{item.user_name}}">
           <view class="mail-content">
-            我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信。
+            {{item.content}}
           </view>
           <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
+            <image class="user-img" src="{{item.send_avatar}}" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name">{{item.receuved_name}}</view>
           </view>
         </view>
-        <view class="mail">
+        <view  wx:for="{{draft_list}}" class="mail" bindtap="show_preview" data-id="{{item.id}}"  data-time="{{item.time}}" data-content="{{item.content}}">
           <view class="mail-content">
-            我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信。
+            {{item.content}}
           </view>
           <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
-          </view>
-        </view>
-        <view class="mail">
-          <view class="mail-content">
-            我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信。
-          </view>
-          <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
-          </view>
-        </view>
-        <view class="mail">
-          <view class="mail-content">
-            我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信，我收到的一封信。
-          </view>
-          <view class="mail-footer">
-            <image class="user-img" src="//jdxl-img.b0.upaiyun.com/uploads/74473adbb16f450983776b7af336e6f7.png" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
-            <view class="user-name">德川亮</view>
+            <image class="user-img" src="{{item.send_avatar}}" style="width: 24px; height: 24px; background-color: #fff;" mode="scaleToFill"></image>
+            <view class="user-name" style="color: #cccccc;">草稿</view>
           </view>
         </view>
       </scroll-view>

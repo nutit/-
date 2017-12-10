@@ -4,6 +4,7 @@ import {formatTime} from './utils/util.js'
 //app.js
 App({
   onLaunch: function () {
+
     require('./utils/sdk-v1.1.1.js')
 
     let clientID = '32628f5c8e645161b5c5'
@@ -16,6 +17,8 @@ App({
       // 获取用户信息
       wx.BaaS.login().then((res) => {
       // 用户允许授权，res 包含用户完整信息，详见下方描述
+        this.globalData.userInfo = res
+
         search_user(res)
       }, (res) => {
          // 用户拒绝授权，res 包含基本用户信息：id、openid、unionid
@@ -26,8 +29,13 @@ App({
 
       let userInfo = this.getUserInfo()
 
+      this.globalData.userInfo = userInfo
+
       search_user(userInfo)
     }
+
+    
+
   },
 
   getUserID(){

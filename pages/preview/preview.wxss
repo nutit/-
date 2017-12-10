@@ -5,6 +5,7 @@ page{
   position:fixed;
   top:10px;
   bottom:150px;
+  width:100%;
   background: #f5f3f3;
 }
 .drawer_content{
@@ -16,18 +17,19 @@ page{
   height: 100%;
 }
 .drawer_content scroll-view{
-  /*background: #D8D8D8;*/
   min-height: 100%;
   border-radius: 4px;
-  background: linear-gradient(#fff 29px, #f5f3f3 1px);
-  background-size: 100% 30px;
+
 }
 .scroll-view-item{
+  min-height: 30px;
   font-size: 14px;
   line-height: 30px;
   color: #6b707f;
   letter-spacing: 2px;
   word-break: break-all;
+  background: linear-gradient(#fff 29px, #f5f3f3 1px);
+  background-size: 100% 30px;
 }
 .drawer-info{
   position: absolute;
